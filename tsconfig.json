@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "declaration": true,
+
+        "module": "commonjs",
+        "strict": true,
+        "noUnusedLocals": true,
+        "noImplicitReturns": true,
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "demo/",
+        "node_modules/"
+    ]
+}
