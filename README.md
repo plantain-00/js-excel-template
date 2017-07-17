@@ -10,3 +10,12 @@ A js excel template used in browser or nodejs environment.
 #### install
 
 `npm i js-excel-template`
+
+#### features
+
++ Generate Excel based on Excel template
++ (for nodejs)Read excel file as template
++ (for nodejs)Write to excel file
++ (for nodejs)To a `Buffer` for downloading
++ (for browser-side js)Take `ArrayBuffer` as template, coming from HTTP downloading, browser uploading or Websocket downloading
++ (for browser-side js)To a `ArrayBuffer` or `Blob` for HTTP uploading, browser-side downloading or Websocket uploading

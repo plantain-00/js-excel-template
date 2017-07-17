@@ -4,12 +4,13 @@
   "description": "A js excel template used in browser or nodejs environment.",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc && tsc -p demo",
+    "tsc": "tsc && tsc -p demo && npm run webpack",
     "tslint": "tslint \"*.ts\" \"spec/*.ts\"",
     "test": "tsc -p spec && jasmine",
     "build": "npm run tsc",
     "lint": "npm run tslint",
-    "release": "clean-release"
+    "release": "clean-release",
+    "webpack": "webpack --config demo/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,9 @@
     "rimraf": "2.6.1",
     "tslint": "5.5.0",
     "typescript": "2.4.0",
+    "webpack": "3.2.0"
+  },
+  "dependencies": {
     "xlsx": "0.10.8"
   }
 }
