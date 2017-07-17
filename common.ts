@@ -76,7 +76,6 @@ export class JsExcelTemplateBase {
             } else if (cell.v === true || cell.v === false) {
                 cell.t = "b";
             }
-            console.log(cell);
         }
     }
 
