@@ -1,7 +1,11 @@
 module.exports = {
   include: [
-    'index.js',
-    'index.d.ts',
+    'browser.js',
+    'browser.d.ts',
+    'nodejs.js',
+    'nodejs.d.ts',
+    'common.js',
+    'common.d.ts',
     'LICENSE',
     'package.json',
     'README.md'
