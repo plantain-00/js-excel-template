@@ -4,15 +4,6 @@ import { JsExcelTemplateBase } from "./common";
 
 function arrayBufferToString(data: ArrayBuffer) {
     return String.fromCharCode(...new Uint8Array(data));
-    // let result = "";
-    // const size = 10240;
-    // const count = data.byteLength / size;
-    // let i = 0;
-    // for (; i < count; i++) {
-    //     result += String.fromCharCode.apply(null, new Uint8Array(data.slice(i * size, i * size + size)));
-    // }
-    // result += String.fromCharCode.apply(null, new Uint8Array(data.slice(i * size)));
-    // return result;
 }
 
 function stringToArrayBuffer(s: string) {

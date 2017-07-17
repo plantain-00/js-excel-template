@@ -42,7 +42,7 @@ export class JsExcelTemplateBase {
                                         }
                                         for (let i = 0; i < value.length; i++) {
                                             const newCell: XLSX.CellObject = sheet[column + (rowIndex + i)];
-                                            newCell.v = cell.w.split(`{${name}.${fieldName}}`).join(value[i][fieldName]);
+                                            this.setCell(newCell, `{${name}.${fieldName}}`, value[i][fieldName]);
                                         }
                                     }
                                 }
@@ -59,11 +59,22 @@ export class JsExcelTemplateBase {
                 for (const cellName in sheet) {
                     if (cellName.indexOf("!") !== 0) {
                         const cell: XLSX.CellObject = sheet[cellName];
-                        if (cell.w && cell.w.indexOf(`{${name}}`) >= 0) {
-                            cell.v = cell.w.split(`{${name}}`).join(value);
-                        }
+                        this.setCell(cell, `{${name}}`, value);
                     }
                 }
+            }
+        }
+    }
+
+    private setCell(cell: XLSX.CellObject, name: string, value: any) {
+        if (cell.w && cell.w.indexOf(name) >= 0) {
+            cell.v = cell.w === name ? value : cell.w.split(name).join(value);
+            if (typeof cell.v === "number") {
+                cell.t = "n";
+            } else if (Object.prototype.toString.call(cell.v) === "[object Date]") {
+                cell.t = "d";
+            } else if (cell.v) {
+                cell.w = cell.v.toString();
             }
         }
     }

@@ -4,10 +4,10 @@
   "description": "A js excel template used in browser or nodejs environment.",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc && tsc -p demo && npm run webpack",
+    "tsc": "tsc && tsc -p demo",
     "tslint": "tslint \"*.ts\" \"spec/*.ts\"",
     "test": "tsc -p spec && jasmine",
-    "build": "npm run tsc",
+    "build": "npm run tsc && npm run webpack",
     "lint": "npm run tslint",
     "release": "clean-release",
     "webpack": "webpack --config demo/webpack.config.js"
