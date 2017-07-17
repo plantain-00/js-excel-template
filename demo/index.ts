@@ -7,6 +7,8 @@ fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer =
     excelTemplate.set("name", "John");
     excelTemplate.set("age", 123);
     excelTemplate.set("now", new Date());
+    excelTemplate.set("isBoy", true);
+    excelTemplate.set("isGirl", false);
 
     const students = [
         { name: "Tommy", age: 12 },

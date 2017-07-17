@@ -67,15 +67,16 @@ export class JsExcelTemplateBase {
     }
 
     private setCell(cell: XLSX.CellObject, name: string, value: any) {
-        if (cell.w && cell.w.indexOf(name) >= 0) {
-            cell.v = cell.w === name ? value : cell.w.split(name).join(value);
+        if (cell.v && typeof cell.v === "string" && cell.v.indexOf(name) >= 0) {
+            cell.v = cell.v === name ? value : cell.v.split(name).join(value);
             if (typeof cell.v === "number") {
                 cell.t = "n";
             } else if (Object.prototype.toString.call(cell.v) === "[object Date]") {
                 cell.t = "d";
-            } else if (cell.v) {
-                cell.w = cell.v.toString();
+            } else if (cell.v === true || cell.v === false) {
+                cell.t = "b";
             }
+            console.log(cell);
         }
     }
 
