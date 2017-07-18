@@ -37,6 +37,7 @@ const excelTemplate = JsExcelTemplate.fromFile("demo/test.xlsx");
 
 // browser(script tag):
 // <script src="file-saver/FileSaver.min.js"></script>
+// <script src="xlsx/dist/xlsx.full.min.js"></script>
 // <script src="js-excel-template/browser/browser.min.js"></script>
 // <script>
 //     fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
