@@ -1,4 +1,4 @@
-import { JsExcelTemplate } from "../nodejs";
+import JsExcelTemplate from "../dist/nodejs/nodejs";
 
 it("", () => {
     const excelTemplate = JsExcelTemplate.fromFile("demo/test.xlsx");

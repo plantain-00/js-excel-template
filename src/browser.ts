@@ -1,6 +1,6 @@
 import * as XLSX from "xlsx";
 
-import { JsExcelTemplateBase } from "./common";
+import JsExcelTemplateBase from "./common";
 
 function arrayBufferToString(data: ArrayBuffer) {
     return String.fromCharCode(...new Uint8Array(data));
@@ -16,7 +16,7 @@ function stringToArrayBuffer(s: string) {
     return arrayBuffer;
 }
 
-export class JsExcelTemplate extends JsExcelTemplateBase {
+export default class JsExcelTemplate extends JsExcelTemplateBase {
     static fromArrayBuffer(arrayBuffer: ArrayBuffer) {
         const ascii = btoa(arrayBufferToString(arrayBuffer));
         const workbook = XLSX.read(ascii, {

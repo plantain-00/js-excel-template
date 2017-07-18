@@ -1,6 +1,6 @@
 import * as XLSX from "xlsx";
 
-export class JsExcelTemplateBase {
+export default class JsExcelTemplateBase {
     constructor(protected workbook: XLSX.WorkBook) { }
 
     set(name: string, value: any) {

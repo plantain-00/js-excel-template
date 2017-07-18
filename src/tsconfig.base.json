@@ -15,10 +15,7 @@
         "noUnusedLocals": true,
         "noImplicitReturns": true,
         "skipLibCheck": true,
-        "downlevelIteration": true
-    },
-    "exclude": [
-        "demo/",
-        "node_modules/"
-    ]
+        "downlevelIteration": true,
+        "importHelpers": true
+    }
 }

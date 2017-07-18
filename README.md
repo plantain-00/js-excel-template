@@ -25,12 +25,18 @@ A js excel template used in browser or nodejs environment.
 ![](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/template.PNG)
 
 ```ts
-import { JsExcelTemplate } from "js-excel-template/nodejs";
+// nodejs:
+import JsExcelTemplate from "js-excel-template/nodejs/nodejs";
 const excelTemplate = JsExcelTemplate.fromFile("demo/test.xlsx");
 
-// import { JsExcelTemplate } from "js-excel-template/browser";
+// browser(module):
+// import JsExcelTemplate from "js-excel-template/browser/browser";
 // fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
 //    const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
+
+// browser(script tag):
+// <script src="file-saver/FileSaver.min.js"></script>
+// <script src="js-excel-template/browser/browser.min.js"></script>
 
 excelTemplate.set("name", "John");
 excelTemplate.set("age", 123);
@@ -57,9 +63,27 @@ excelTemplate.set("average", students.reduce((p, c) => p + c.age, 0) / students.
 
 excelTemplate.set("students", students);
 
+// nodejs:
 excelTemplate.saveAs("spec/out.xlsx");
+
+// browser(module):
 // import * as FileSaver from "file-saver";
 // FileSaver.saveAs(excelTemplate.toBlob(), "test.xlsx");
+
+// browser(script tag):
+// saveAs(excelTemplate.toBlob(), "test.xlsx");
 ```
 
 ![](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/out.PNG)
+
+#### change logs
+
+```ts
+// v2
+import JsExcelTemplate from "js-excel-template/nodejs/nodejs";
+import JsExcelTemplate from "js-excel-template/browser/browser";
+
+// v1
+import { JsExcelTemplate } from "js-excel-template/nodejs";
+import { JsExcelTemplate } from "js-excel-template/browser";
+```

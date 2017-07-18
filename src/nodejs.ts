@@ -1,8 +1,8 @@
 import * as XLSX from "xlsx";
 
-import { JsExcelTemplateBase } from "./common";
+import JsExcelTemplateBase from "./common";
 
-export class JsExcelTemplate extends JsExcelTemplateBase {
+export default class JsExcelTemplate extends JsExcelTemplateBase {
     static fromFile(filepath: string) {
         const workbook = XLSX.readFile(filepath, {
             cellNF: true,

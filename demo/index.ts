@@ -1,5 +1,5 @@
 import * as FileSaver from "file-saver";
-import { JsExcelTemplate } from "../browser";
+import JsExcelTemplate from "../dist/browser/browser";
 
 fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
     const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
