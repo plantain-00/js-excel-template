@@ -30,13 +30,17 @@ import JsExcelTemplate from "js-excel-template/nodejs/nodejs";
 const excelTemplate = JsExcelTemplate.fromFile("demo/test.xlsx");
 
 // browser(module):
+// import * as FileSaver from "file-saver";
 // import JsExcelTemplate from "js-excel-template/browser/browser";
 // fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
-//    const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
+//     const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
 
 // browser(script tag):
 // <script src="file-saver/FileSaver.min.js"></script>
 // <script src="js-excel-template/browser/browser.min.js"></script>
+// <script>
+//     fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
+//         const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
 
 excelTemplate.set("name", "John");
 excelTemplate.set("age", 123);
@@ -67,11 +71,14 @@ excelTemplate.set("students", students);
 excelTemplate.saveAs("spec/out.xlsx");
 
 // browser(module):
-// import * as FileSaver from "file-saver";
-// FileSaver.saveAs(excelTemplate.toBlob(), "test.xlsx");
+//     FileSaver.saveAs(excelTemplate.toBlob(), "test.xlsx");
+// });
 
 // browser(script tag):
-// saveAs(excelTemplate.toBlob(), "test.xlsx");
+//         browser(script tag):
+//         saveAs(excelTemplate.toBlob(), "test.xlsx");
+//     });
+// </script>
 ```
 
 ![](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/out.PNG)
