@@ -5,7 +5,7 @@ module.exports = {
     `tsc -p src/tsconfig.browser.json`,
     `rollup --config rollup.config.js`,
     `tsc -p demo`,
-    `webpack --config demo/webpack.config.js`
+    `webpack --display-modules --config demo/webpack.config.js`
   ],
   lint: [
     `tslint "*.ts" "spec/*.ts"`,
