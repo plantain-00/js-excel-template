@@ -16,6 +16,9 @@ function stringToArrayBuffer(s: string) {
     return arrayBuffer;
 }
 
+/**
+ * @public
+ */
 export default class JsExcelTemplate extends JsExcelTemplateBase {
     static fromArrayBuffer(arrayBuffer: ArrayBuffer) {
         const ascii = btoa(arrayBufferToString(arrayBuffer));

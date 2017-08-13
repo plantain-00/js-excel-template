@@ -2,6 +2,9 @@ import * as XLSX from "xlsx";
 
 import JsExcelTemplateBase from "./common";
 
+/**
+ * @public
+ */
 export default class JsExcelTemplate extends JsExcelTemplateBase {
     static fromFile(filepath: string) {
         const workbook = XLSX.readFile(filepath, {
