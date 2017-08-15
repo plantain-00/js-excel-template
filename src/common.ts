@@ -23,7 +23,7 @@ export default class JsExcelTemplateBase {
                     }
 
                     for (const cellName in sheet) {
-                        if (cellName.indexOf("!") !== 0) {
+                        if (sheet.hasOwnProperty(cellName) && cellName.indexOf("!") !== 0) {
                             const { column, rowIndex } = this.parseCellName(cellName);
                             const cell: XLSX.CellObject = sheet[cellName];
                             if (rowIndex === targetRowIndex && cell.w) {
@@ -57,7 +57,7 @@ export default class JsExcelTemplateBase {
             for (const sheetName of this.workbook.SheetNames) {
                 const sheet = this.workbook.Sheets[sheetName];
                 for (const cellName in sheet) {
-                    if (cellName.indexOf("!") !== 0) {
+                    if (sheet.hasOwnProperty(cellName) && cellName.indexOf("!") !== 0) {
                         const cell: XLSX.CellObject = sheet[cellName];
                         this.setCell(cell, `{${name}}`, value);
                     }
@@ -96,7 +96,7 @@ export default class JsExcelTemplateBase {
 
     private findRowIndex(name: string, sheet: XLSX.WorkSheet) {
         for (const cellName in sheet) {
-            if (cellName.indexOf("!") !== 0) {
+            if (sheet.hasOwnProperty(cellName) && cellName.indexOf("!") !== 0) {
                 const cell: XLSX.CellObject = sheet[cellName];
                 if (cell.w && cell.w.indexOf(`{${name}.`) >= 0) {
                     const { rowIndex } = this.parseCellName(cellName);
