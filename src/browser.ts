@@ -20,7 +20,7 @@ function stringToArrayBuffer(s: string) {
  * @public
  */
 export default class JsExcelTemplate extends JsExcelTemplateBase {
-    static fromArrayBuffer(arrayBuffer: ArrayBuffer) {
+    public static fromArrayBuffer(arrayBuffer: ArrayBuffer) {
         const ascii = btoa(arrayBufferToString(arrayBuffer));
         const workbook = XLSX.read(ascii, {
             type: "base64",
@@ -31,11 +31,11 @@ export default class JsExcelTemplate extends JsExcelTemplateBase {
         return new JsExcelTemplate(workbook);
     }
 
-    toArrayBuffer(bookType: XLSX.BookType) {
+    public toArrayBuffer(bookType: XLSX.BookType) {
         return stringToArrayBuffer(XLSX.write(this.workbook, { bookType, type: "binary" }));
     }
 
-    toBlob(bookType: XLSX.BookType = "xlsx") {
+    public toBlob(bookType: XLSX.BookType = "xlsx") {
         const arrayBuffer = this.toArrayBuffer(bookType);
         return new Blob([arrayBuffer], { type: "application/octet-stream" });
     }

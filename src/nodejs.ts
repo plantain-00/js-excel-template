@@ -6,7 +6,7 @@ import JsExcelTemplateBase from "./common";
  * @public
  */
 export default class JsExcelTemplate extends JsExcelTemplateBase {
-    static fromFile(filepath: string) {
+    public static fromFile(filepath: string) {
         const workbook = XLSX.readFile(filepath, {
             cellNF: true,
             cellStyles: true,
@@ -15,11 +15,11 @@ export default class JsExcelTemplate extends JsExcelTemplateBase {
         return new JsExcelTemplate(workbook);
     }
 
-    toBuffer(bookType: XLSX.BookType) {
+    public toBuffer(bookType: XLSX.BookType) {
         return XLSX.write(this.workbook, { bookType, type: "buffer" });
     }
 
-    saveAs(filepath: string) {
+    public saveAs(filepath: string) {
         XLSX.writeFile(this.workbook, filepath);
     }
 }
