@@ -3,7 +3,7 @@ import * as XLSX from "xlsx";
 export default class JsExcelTemplateBase {
     constructor(protected workbook: XLSX.WorkBook) { }
 
-    set(name: string, value: any) {
+    public set(name: string, value: any) {
         if (Array.isArray(value)) {
             if (value.length === 0) {
                 return;
