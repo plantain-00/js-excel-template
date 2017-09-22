@@ -2,11 +2,13 @@ import uglify from 'rollup-plugin-uglify'
 import resolve from 'rollup-plugin-node-resolve'
 
 export default {
-  entry: 'dist/browser/browser.js',
-  dest: 'dist/browser/browser.min.js',
-  format: 'umd',
-  moduleName: 'JsExcelTemplate',
+  input: 'dist/browser/browser.js',
+  name: 'JsExcelTemplate',
   plugins: [resolve(), uglify()],
+  output: {
+    file: 'dist/browser/browser.min.js',
+    format: 'umd'
+  },
   external: ['xlsx'],
   globals: {
     xlsx: 'XLSX'
