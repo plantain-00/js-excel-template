@@ -382,9 +382,9 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-cfb@~0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/cfb/-/cfb-0.12.1.tgz#57fadfa9fc31409b2ca58a4109ecaaac5ad1a4ec"
+cfb@~0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/cfb/-/cfb-0.13.1.tgz#6506e0ab9b6846be7ef25c758932fe16f64c9c71"
   dependencies:
     commander "~2.11.0"
     printj "~1.1.0"
@@ -433,19 +433,16 @@ circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
 
-clean-release@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/clean-release/-/clean-release-1.3.4.tgz#55598e8438c679ce2b2f0308921ad0269fe8b9a7"
+clean-release@1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/clean-release/-/clean-release-1.3.5.tgz#3c3461656b59ab3b9deb05e4ff8e4e587f60f1ba"
   dependencies:
     cpy "5.1.0"
     glob "7.1.2"
-    lodash.flatten "4.4.0"
-    lodash.uniq "4.5.0"
-    minimatch "3.0.4"
     minimist "1.2.0"
     mkdirp "0.5.1"
-    rimraf "2.6.1"
-    tmp "0.0.31"
+    rimraf "2.6.2"
+    tmp "0.0.33"
 
 clean-scripts@1.2.6:
   version "1.2.6"
@@ -573,9 +570,9 @@ cpy@5.1.0:
     globby "^6.0.0"
     nested-error-stacks "^2.0.0"
 
-crc-32@~1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/crc-32/-/crc-32-1.1.0.tgz#301ef4a1c2217adc8463b6e6e96c4e44310e10c7"
+crc-32@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/crc-32/-/crc-32-1.1.1.tgz#5d739d5e4c6e352ad8304d73223d483fe55adb8d"
   dependencies:
     exit-on-epipe "~1.0.1"
     printj "~1.1.0"
@@ -1776,14 +1773,6 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
-lodash.flatten@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
-
-lodash.uniq@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
-
 lodash@^4.0.0, lodash@^4.14.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
@@ -1872,7 +1861,7 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
 
-minimatch@3.0.4, minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
+minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
@@ -1914,14 +1903,11 @@ nested-error-stacks@^2.0.0:
   dependencies:
     inherits "~2.0.1"
 
-no-unused-export@1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/no-unused-export/-/no-unused-export-1.2.6.tgz#9aa5a88c51a718dc4640adf5de295211e6b35e01"
+no-unused-export@1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/no-unused-export/-/no-unused-export-1.2.7.tgz#1fd59afce2093f2a5cac5c07458e5fa446a20110"
   dependencies:
     glob "7.1.2"
-    lodash.flatten "4.4.0"
-    lodash.uniq "4.5.0"
-    minimatch "3.0.4"
     minimist "1.2.0"
     parse5 "3.0.2"
     postcss-less "1.1.0"
@@ -2080,7 +2066,7 @@ os-locale@^2.0.0:
     lcid "^1.0.0"
     mem "^1.1.0"
 
-os-tmpdir@^1.0.0, os-tmpdir@~1.0.1:
+os-tmpdir@^1.0.0, os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
 
@@ -2508,7 +2494,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@2.6.1, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
+rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
@@ -2853,11 +2839,11 @@ timers-browserify@^2.0.2:
   dependencies:
     setimmediate "^1.0.4"
 
-tmp@0.0.31:
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.31.tgz#8f38ab9438e17315e5dbd8b3657e8bfb277ae4a7"
+tmp@0.0.33:
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
   dependencies:
-    os-tmpdir "~1.0.1"
+    os-tmpdir "~1.0.2"
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
@@ -3105,15 +3091,15 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-xlsx@0.11:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.11.3.tgz#d5394137d5d1a65b046bbe41c2a4d7468af8670b"
+xlsx@0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.11.4.tgz#75c8e0df4a8134342691429409313e62a8a9b1e1"
   dependencies:
     adler-32 "~1.1.0"
-    cfb "~0.12.1"
+    cfb "~0.13.1"
     codepage "~1.11.0"
     commander "~2.11.0"
-    crc-32 "~1.1.0"
+    crc-32 "~1.1.1"
     exit-on-epipe "~1.0.1"
     ssf "~0.10.1"
 
