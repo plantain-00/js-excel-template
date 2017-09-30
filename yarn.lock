@@ -1903,16 +1903,16 @@ nested-error-stacks@^2.0.0:
   dependencies:
     inherits "~2.0.1"
 
-no-unused-export@1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/no-unused-export/-/no-unused-export-1.2.7.tgz#1fd59afce2093f2a5cac5c07458e5fa446a20110"
+no-unused-export@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/no-unused-export/-/no-unused-export-1.3.0.tgz#3b8c48f27041e1f47cea69088dcbb3e15b20230a"
   dependencies:
     glob "7.1.2"
     minimist "1.2.0"
     parse5 "3.0.2"
     postcss-less "1.1.0"
     postcss-scss "1.0.2"
-    typescript "2.4.2"
+    typescript "2.5.2"
 
 node-libs-browser@^2.0.0:
   version "2.0.0"
@@ -2908,13 +2908,13 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.2.tgz#f8395f85d459276067c988aa41837a8f82870844"
-
 typescript@2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.2.tgz#038a95f7d9bbb420b1bf35ba31d4c5c1dd3ffe34"
+
+typescript@2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.3.tgz#df3dcdc38f3beb800d4bc322646b04a3f6ca7f0d"
 
 uglify-js@^2.8.29:
   version "2.8.29"
@@ -3091,9 +3091,9 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-xlsx@0.11.4:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.11.4.tgz#75c8e0df4a8134342691429409313e62a8a9b1e1"
+xlsx@0.11.5:
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.11.5.tgz#8c66cd97140be072e3dd320d12baa099689ceb74"
   dependencies:
     adler-32 "~1.1.0"
     cfb "~0.13.1"
