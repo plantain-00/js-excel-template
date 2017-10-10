@@ -1,6 +1,6 @@
 {
   "name": "js-excel-template",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A js excel template used in browser or nodejs environment.",
   "main": "index.js",
   "scripts": {
@@ -38,6 +38,6 @@
     "webpack": "3.6.0"
   },
   "dependencies": {
-    "xlsx": "0.11.5"
+    "xlsx": "0.11"
   }
 }
