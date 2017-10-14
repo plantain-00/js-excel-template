@@ -444,12 +444,12 @@ clean-release@1.3.5:
     rimraf "2.6.2"
     tmp "0.0.33"
 
-clean-scripts@1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/clean-scripts/-/clean-scripts-1.2.6.tgz#71649a955036e72c976c1ca230ea179290c84183"
+clean-scripts@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/clean-scripts/-/clean-scripts-1.4.2.tgz#90054e3db86fcdd5ab94a61b147cc02acd5a66de"
   dependencies:
     minimist "1.2.0"
-    pretty-ms "3.0.0"
+    pretty-ms "3.0.1"
 
 cli-cursor@^1.0.1:
   version "1.0.2"
@@ -2268,9 +2268,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-pretty-ms@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-3.0.0.tgz#f1cc2028b66f5fa736ac23ef57703d7e684ab101"
+pretty-ms@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-3.0.1.tgz#7c18b73c228a9b8f6edc2835a12cb8f7ed85f9f4"
   dependencies:
     parse-ms "^1.0.0"
     plur "^2.1.2"
@@ -3019,9 +3019,9 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.6.0.tgz#a89a929fbee205d35a4fa2cc487be9cbec8898bc"
+webpack@3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.7.1.tgz#6046b5c415ff7df7a0dc54c5b6b86098e8b952da"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
