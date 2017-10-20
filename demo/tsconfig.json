@@ -19,6 +19,7 @@
         "jsx": "react",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
-        "downlevelIteration": true
+        "downlevelIteration": true,
+        "newLine": "LF"
     }
 }
