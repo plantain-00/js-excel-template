@@ -14,7 +14,7 @@ module.exports = {
           rollup: `rollup --config rollup.config.js`,
           demo: [
             `tsc -p demo`,
-            `webpack --display-modules --config demo/webpack.config.js`
+            `webpack --config demo/webpack.config.js`
           ]
         }
       ]
