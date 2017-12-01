@@ -34,6 +34,5 @@ module.exports = {
   fix: {
     ts: `tslint --fix ${tsFiles}`,
     js: `standard --fix ${jsFiles}`
-  },
-  release: `clean-release`
+  }
 }
