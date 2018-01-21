@@ -10,7 +10,6 @@ function stringToArrayBuffer (s: string) {
   const arrayBuffer = new ArrayBuffer(s.length)
   const view = new Uint8Array(arrayBuffer)
   for (let i = 0; i < s.length; i++) {
-        // tslint:disable-next-line:no-bitwise
     view[i] = s.charCodeAt(i) & 0xFF
   }
   return arrayBuffer
