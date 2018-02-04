@@ -24,7 +24,7 @@ A js excel template used in browser or nodejs environment.
 
 ## example
 
-![](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/template.PNG)
+![template](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/template.PNG)
 
 ```ts
 // nodejs:
@@ -83,7 +83,7 @@ excelTemplate.saveAs("spec/out.xlsx");
 // </script>
 ```
 
-![](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/out.PNG)
+![out](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/out.PNG)
 
 ## change logs
 
