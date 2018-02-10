@@ -1,21 +1,8 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "declaration": true,
-
-        "lib": [
-            "dom",
-            "es5",
-            "es2015.promise",
-            "es2015.iterable"
-        ],
-
-        "module": "commonjs",
-        "strict": true,
-        "noUnusedLocals": true,
-        "noImplicitReturns": true,
-        "skipLibCheck": true,
-        "downlevelIteration": true,
-        "importHelpers": true
-    }
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es5",
+    "declaration": true,
+    "module": "commonjs"
+  }
 }
