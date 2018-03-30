@@ -36,8 +36,8 @@
     "standard": "11.0.1",
     "tslint": "5.9.1",
     "tslint-config-standard": "7.0.0",
-    "typescript": "2.7.2",
-    "webpack": "4.2.0",
+    "typescript": "2.8.1",
+    "webpack": "4.4.1",
     "webpack-cli": "2.0.13"
   },
   "dependencies": {
