@@ -1,9 +1,10 @@
 import * as XLSX from 'xlsx'
 
 export default class JsExcelTemplateBase {
-  constructor (protected workbook: XLSX.WorkBook) { }
+  constructor(protected workbook: XLSX.WorkBook) { }
 
-  public set (name: string, value: any) {
+  // tslint:disable-next-line:cognitive-complexity
+  public set(name: string, value: any) {
     if (Array.isArray(value)) {
       if (value.length === 0) {
         return
@@ -66,7 +67,7 @@ export default class JsExcelTemplateBase {
     }
   }
 
-  private setCell (cell: XLSX.CellObject, name: string, value: any) {
+  private setCell(cell: XLSX.CellObject, name: string, value: any) {
     if (cell.v && typeof cell.v === 'string' && cell.v.indexOf(name) >= 0) {
       cell.v = cell.v === name ? value : cell.v.split(name).join(value)
       if (typeof cell.v === 'number') {
@@ -79,7 +80,7 @@ export default class JsExcelTemplateBase {
     }
   }
 
-  private parseCellName (cellName: string) {
+  private parseCellName(cellName: string) {
     for (let i = 0; i < cellName.length; i++) {
       if (!isNaN(+cellName[i])) {
         return {
@@ -94,7 +95,7 @@ export default class JsExcelTemplateBase {
     }
   }
 
-  private findRowIndex (name: string, sheet: XLSX.WorkSheet) {
+  private findRowIndex(name: string, sheet: XLSX.WorkSheet) {
     for (const cellName in sheet) {
       if (sheet.hasOwnProperty(cellName) && cellName.indexOf('!') !== 0) {
         const cell: XLSX.CellObject = sheet[cellName]
