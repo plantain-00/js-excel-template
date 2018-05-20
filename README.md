@@ -6,6 +6,7 @@
 [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/github/plantain-00/js-excel-template?branch=master&svg=true)](https://ci.appveyor.com/project/plantain-00/js-excel-template/branch/master)
 [![npm version](https://badge.fury.io/js/js-excel-template.svg)](https://badge.fury.io/js/js-excel-template)
 [![Downloads](https://img.shields.io/npm/dm/js-excel-template.svg)](https://www.npmjs.com/package/js-excel-template)
+[![gzip size](https://img.badgesize.io/https://unpkg.com/js-excel-template?compression=gzip)](https://unpkg.com/js-excel-template)
 
 A js excel template used in browser or nodejs environment.
 
