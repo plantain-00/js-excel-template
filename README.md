@@ -29,19 +29,19 @@ A js excel template used in browser or nodejs environment.
 
 ```ts
 // nodejs:
-import JsExcelTemplate from "js-excel-template/nodejs/nodejs";
+import JsExcelTemplate from "js-excel-template";
 const excelTemplate = JsExcelTemplate.fromFile("demo/test.xlsx");
 
 // browser(module):
 // import * as FileSaver from "file-saver";
-// import JsExcelTemplate from "js-excel-template/browser/browser";
+// import JsExcelTemplate from "js-excel-template";
 // fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
 //     const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
 
 // browser(script tag):
 // <script src="file-saver/FileSaver.min.js"></script>
 // <script src="xlsx/dist/xlsx.full.min.js"></script>
-// <script src="js-excel-template/browser/browser.min.js"></script>
+// <script src="js-excel-template/browser/js-excel-template.min.js"></script>
 // <script>
 //     fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
 //         const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);

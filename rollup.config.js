@@ -6,7 +6,7 @@ export default {
   name: 'JsExcelTemplate',
   plugins: [resolve(), uglify()],
   output: {
-    file: 'dist/browser/browser.min.js',
+    file: 'dist/js-excel-template.min.js',
     format: 'umd'
   },
   external: ['xlsx'],
