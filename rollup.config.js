@@ -4,7 +4,7 @@ import resolve from 'rollup-plugin-node-resolve'
 export default {
   input: 'dist/browser/browser.js',
   name: 'JsExcelTemplate',
-  plugins: [resolve(), uglify()],
+  plugins: [resolve({ browser: true }), uglify()],
   output: {
     file: 'dist/js-excel-template.min.js',
     format: 'umd'

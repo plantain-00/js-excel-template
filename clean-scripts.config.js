@@ -23,7 +23,9 @@ module.exports = {
     js: `standard ${jsFiles}`,
     export: `no-unused-export ${tsFiles}`,
     commit: `commitlint --from=HEAD~1`,
-    markdown: `markdownlint README.md`
+    markdown: `markdownlint README.md`,
+    typeCoverage: 'type-coverage -p src/tsconfig.nodejs.json --at-least 98',
+    typeCoverageBrowser: 'type-coverage -p src/tsconfig.browser.json --at-least 98'
   },
   test: [
     'tsc -p spec',
