@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/plantain-00/js-excel-template#readme",
   "devDependencies": {
-    "@commitlint/cli": "7.2.1",
-    "@commitlint/config-conventional": "7.1.2",
+    "@commitlint/cli": "7.3.1",
+    "@commitlint/config-conventional": "7.3.1",
     "@types/file-saver": "2.0.0",
     "@types/jasmine": "3.3.5",
     "clean-scripts": "1.9.2",
@@ -37,17 +37,17 @@
     "markdownlint-cli": "0.13.0",
     "no-unused-export": "1.7.0",
     "rimraf": "2.6.3",
-    "rollup": "1.0.1",
+    "rollup": "1.1.0",
     "rollup-plugin-node-resolve": "4.0.0",
-    "rollup-plugin-uglify": "6.0.0",
+    "rollup-plugin-uglify": "6.0.1",
     "standard": "12.0.1",
-    "tslint": "5.12.0",
+    "tslint": "5.12.1",
     "tslint-config-standard": "8.0.1",
     "tslint-sonarts": "1.8.0",
     "type-coverage": "1.6.2",
-    "typescript": "3.2.1",
-    "webpack": "4.28.3",
-    "webpack-cli": "3.2.0"
+    "typescript": "3.2.2",
+    "webpack": "4.28.4",
+    "webpack-cli": "3.2.1"
   },
   "dependencies": {
     "xlsx": "0.14"
