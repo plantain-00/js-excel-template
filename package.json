@@ -46,8 +46,8 @@
     "tslint-sonarts": "1.9.0",
     "type-coverage": "1.9.1",
     "typescript": "3.3.1",
-    "webpack": "4.29.0",
-    "webpack-cli": "3.2.1"
+    "webpack": "4.29.3",
+    "webpack-cli": "3.2.3"
   },
   "dependencies": {
     "xlsx": "0.14"
