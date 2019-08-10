@@ -3,7 +3,6 @@ import * as XLSX from 'xlsx'
 export default class JsExcelTemplateBase {
   constructor(protected workbook: XLSX.WorkBook) { }
 
-  // tslint:disable-next-line:cognitive-complexity
   public set(name: string, value: any) {
     if (Array.isArray(value)) {
       if (value.length === 0) {
