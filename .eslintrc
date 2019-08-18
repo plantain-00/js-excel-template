@@ -7,7 +7,7 @@
     "prettier/@typescript-eslint"
   ],
   "parserOptions": {
-    "project": "./tsconfig.base.json"
+    "project": "./tsconfig.eslint.json"
   },
   "plugins": [
     "plantain"
@@ -17,6 +17,7 @@
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-parameter-properties": "off",
+    "no-prototype-builtins": "off",
     "no-case-declarations": "off",
     "no-console": "off",
     "plantain/promise-not-await": "error"
