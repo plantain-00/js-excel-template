@@ -34,21 +34,21 @@
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "@typescript-eslint/parser": "2.0.0",
     "clean-scripts": "1.12.1",
-    "eslint": "6.1.0",
-    "eslint-config-prettier": "6.0.0",
+    "eslint": "6.2.1",
+    "eslint-config-prettier": "6.1.0",
     "eslint-plugin-plantain": "0.1.2",
     "file-saver": "2.0.2",
     "jasmine": "3.4.0",
-    "markdownlint-cli": "0.17.0",
+    "markdownlint-cli": "0.18.0",
     "no-unused-export": "1.9.0",
     "rimraf": "3.0.0",
-    "rollup": "1.19.4",
+    "rollup": "1.20.1",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-uglify": "6.0.2",
     "type-coverage": "2.2.0",
     "typescript": "3.5.3",
     "webpack": "4.39.2",
-    "webpack-cli": "3.3.6"
+    "webpack-cli": "3.3.7"
   },
   "dependencies": {
     "xlsx": "0.15"
