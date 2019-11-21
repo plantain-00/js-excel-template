@@ -1,6 +1,7 @@
 module.exports = {
   include: [
-    'dist/**/*',
+    'dist/**/*.js',
+    'dist/index.d.ts',
     'LICENSE',
     'package.json',
     'README.md'

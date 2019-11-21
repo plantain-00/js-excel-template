@@ -5,7 +5,10 @@ module.exports = {
   build: [
     `rimraf dist/`,
     {
-      back: `tsc -p src/tsconfig.nodejs.json`,
+      back: [
+        'tsc -p src/tsconfig.nodejs.json',
+        'api-extractor run --local'
+      ],
       front: [
         `tsc -p src/tsconfig.browser.json`,
         {

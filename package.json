@@ -6,7 +6,6 @@
   "module": "browser/browser/index.js",
   "unpkg": "js-excel-template.min.js",
   "jsdelivr": "js-excel-template.min.js",
-  "types": "nodejs/nodejs/index.d.ts",
   "scripts": {
     "build": "clean-scripts build",
     "lint": "clean-scripts lint",
@@ -29,6 +28,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
+    "@microsoft/api-extractor": "^7.6.1",
     "@types/file-saver": "2.0.1",
     "@types/jasmine": "3.4.6",
     "@typescript-eslint/eslint-plugin": "2.6.1",
