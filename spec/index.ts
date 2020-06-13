@@ -1,6 +1,7 @@
-import JsExcelTemplate from '../dist/nodejs/nodejs'
+import test from 'ava'
+import JsExcelTemplate from '../src/nodejs'
 
-it('', () => {
+test('JsExcelTemplate', (t) => {
   const excelTemplate = JsExcelTemplate.fromFile('demo/test.xlsx')
 
   excelTemplate.set('name', 'John')
@@ -29,4 +30,6 @@ it('', () => {
   excelTemplate.set('students', students)
 
   excelTemplate.saveAs('spec/out.xlsx')
+
+  t.pass()
 })
