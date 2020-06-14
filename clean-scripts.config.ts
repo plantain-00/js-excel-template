@@ -13,10 +13,7 @@ export default {
         `tsc -p src/tsconfig.browser.json`,
         {
           rollup: `rollup --config rollup.config.js`,
-          demo: [
-            `tsc -p demo`,
-            `webpack --config demo/webpack.config.js`
-          ]
+          demo: `webpack --config demo/webpack.config.ts`
         }
       ]
     }

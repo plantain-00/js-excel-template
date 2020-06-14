@@ -1,3 +1,5 @@
+import { ConfigData } from 'clean-release'
+
 export default {
   include: [
     'dist/**/*.js',
@@ -21,4 +23,4 @@ export default {
     'git push',
     `git push origin v${version}`
   ]
-}
+} as ConfigData
