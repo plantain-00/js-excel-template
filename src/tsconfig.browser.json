@@ -2,6 +2,7 @@
   "extends": "tsconfig-plantain",
   "compilerOptions": {
     "target": "es5",
+    "noUncheckedIndexedAccess": false,
     "outDir": "../dist/browser",
     "declaration": true
   },

@@ -1,6 +1,7 @@
 {
   "extends": "tsconfig-plantain",
   "compilerOptions": {
+    "noUncheckedIndexedAccess": false,
     "module": "commonjs"
   }
 }

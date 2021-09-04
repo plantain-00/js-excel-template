@@ -2,6 +2,7 @@
   "extends": "tsconfig-plantain",
   "compilerOptions": {
     "outDir": "../dist/nodejs",
+    "noUncheckedIndexedAccess": false,
     "module": "commonjs",
     "declaration": true
   },
