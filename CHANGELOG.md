@@ -1,5 +1,9 @@
 # Change Log
 
+## [3.0.1](https://github.com/plantain-00/js-excel-template/compare/v3.0.0...v3.0.1) (2022-02-18)
+  
+* fix: more field for array value ([d69c377](https://github.com/plantain-00/js-excel-template/commit/d69c377d738f34dd71fb9a969727566b6c79a92e))
+
 ## [3.0.0](https://github.com/plantain-00/js-excel-template/compare/v2.0.4...v3.0.0) (2022-02-18)
   
 * feat: use exceljs instead of xlsx ([4c10129](https://github.com/plantain-00/js-excel-template/commit/4c101298aaba3adefc2c950d42d1b1d18f9edae9))
