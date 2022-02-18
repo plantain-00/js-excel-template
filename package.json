@@ -23,7 +23,7 @@
     "url": "https://github.com/plantain-00/js-excel-template/issues"
   },
   "typeCoverage": {
-    "atLeast": 98.07
+    "atLeast": 99.27
   },
   "homepage": "https://github.com/plantain-00/js-excel-template#readme",
   "devDependencies": {

@@ -53,7 +53,16 @@ excelTemplate.set("name", "John");
 excelTemplate.set("age", 123);
 excelTemplate.set("now", new Date());
 excelTemplate.set("isBoy", true);
-excelTemplate.set("isGirl", false);
+excelTemplate.set('isGirl', {
+  richText: [
+    {
+      text: 'false',
+      font: {
+        strike: true,
+      },
+    },
+  ],
+})
 
 const students = [
   { name: "Tommy", age: 12 },
