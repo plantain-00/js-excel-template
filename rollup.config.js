@@ -9,8 +9,8 @@ export default {
     file: 'dist/js-excel-template.min.js',
     format: 'umd',
     globals: {
-      xlsx: 'XLSX'
+      exceljs: 'ExcelJS'
     }
   },
-  external: ['xlsx']
+  external: ['exceljs']
 }

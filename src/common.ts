@@ -1,109 +1,99 @@
-import * as XLSX from 'xlsx'
+import * as ExcelJS from 'exceljs'
 
 export default class JsExcelTemplateBase {
-  constructor(protected workbook: XLSX.WorkBook) { }
+  protected workbook = new ExcelJS.Workbook()
 
-  public set(name: string, value: any) {
-    if (Array.isArray(value)) {
+  public set(name: string, value: unknown, options?: Partial<{
+    duplicateCellIfArray: boolean
+  }>) {
+    if (isArray(value)) {
       if (value.length === 0) {
         return
       }
-      for (const sheetName of this.workbook.SheetNames) {
-        const sheet = this.workbook.Sheets[sheetName]
-        const targetRowIndex = this.findRowIndex(name, sheet)
-        if (targetRowIndex >= 0) {
-          const ref = sheet['!ref']
-          if (ref) {
-            const [leftRange, rightRange] = ref.split(':')
-            const { column: maxColumnName, rowIndex: maxRowCount } = this.parseCellName(rightRange)
-            const newMaxRowCount = maxRowCount + value.length
-            if (maxRowCount >= 0) {
-              sheet['!ref'] = `${leftRange}:${maxColumnName}${newMaxRowCount}`
-            }
-          }
-
-          for (const cellName in sheet) {
-            if (sheet.hasOwnProperty(cellName) && cellName.indexOf('!') !== 0) {
-              const { column, rowIndex } = this.parseCellName(cellName)
-              const cell: XLSX.CellObject = sheet[cellName]
-              if (rowIndex === targetRowIndex && cell.w) {
-                const index = cell.w.indexOf(`{${name}.`)
-                if (index >= 0) {
-                  let fieldName: string | undefined
-                  for (let i = index + `{${name}.`.length; i < cell.w.length; i++) {
-                    if (cell.w[i] === '}') {
-                      fieldName = cell.w.substring(index + `{${name}.`.length, i)
-                      break
-                    }
+      for (const sheet of this.workbook.worksheets) {
+        sheet.eachRow((row, rowIndex) => {
+          let rowDuplicated = false
+          const duplicateAndSetCell = (text: string, columnIndex: number) => {
+            const fieldName = this.getFieldName(text, name)
+            if (fieldName) {
+              if (options?.duplicateCellIfArray) {
+                for (let i = 1; i < value.length; i++) {
+                  row.getCell(columnIndex + i).value = row.getCell(columnIndex).value
+                }
+                for (let i = 0; i < value.length; i++) {
+                  this.setCell(row.getCell(columnIndex + i), `{${name}.${fieldName}}`, (value[i] as Record<string, unknown>)[fieldName])
+                }
+              } else {
+                if (!rowDuplicated) {
+                  if (value.length > 1) {
+                    sheet.duplicateRow(rowIndex, value.length - 1, true)
                   }
-                  if (fieldName) {
-                    for (let i = 1; i < value.length; i++) {
-                      sheet[column + (rowIndex + i)] = JSON.parse(JSON.stringify(sheet[cellName]))
-                    }
-                    for (let i = 0; i < value.length; i++) {
-                      const newCell: XLSX.CellObject = sheet[column + (rowIndex + i)]
-                      this.setCell(newCell, `{${name}.${fieldName}}`, value[i][fieldName])
-                    }
-                  }
+                  rowDuplicated = true
+                }
+                for (let i = 0; i < value.length; i++) {
+                  this.setCell(sheet.getRow(rowIndex + i).getCell(columnIndex), `{${name}.${fieldName}}`, (value[i] as Record<string, unknown>)[fieldName])
                 }
               }
             }
           }
-
-          return
-        }
+          row.eachCell((cell, columnIndex) => {
+            if (typeof cell.value === 'string') {
+              duplicateAndSetCell(cell.value, columnIndex)
+            } else if (typeof cell.value === 'object' && cell.value) {
+              const richTextCell = cell.value as ExcelJS.CellRichTextValue
+              if (richTextCell.richText && isArray(richTextCell.richText)) {
+                for (const richText of richTextCell.richText) {
+                  duplicateAndSetCell(richText.text, columnIndex)
+                }
+              }
+            }
+          })
+        })
       }
     } else {
-      for (const sheetName of this.workbook.SheetNames) {
-        const sheet = this.workbook.Sheets[sheetName]
-        for (const cellName in sheet) {
-          if (sheet.hasOwnProperty(cellName) && cellName.indexOf('!') !== 0) {
-            const cell: XLSX.CellObject = sheet[cellName]
+      for (const sheet of this.workbook.worksheets) {
+        sheet.eachRow((row) => {
+          row.eachCell((cell) => {
             this.setCell(cell, `{${name}}`, value)
+          })
+        })
+      }
+    }
+  }
+
+  public toArrayBuffer() {
+    return this.workbook.xlsx.writeBuffer()
+  }
+
+  private getFieldName(text: string, name: string) {
+    const index = text.indexOf(`{${name}.`)
+    if (index >= 0) {
+      const endIndex = text.indexOf('}', index + `{${name}.`.length)
+      if (endIndex >= 0) {
+        return text.substring(index + `{${name}.`.length, endIndex)
+      }
+    }
+    return ''
+  }
+
+  private setCell(cell: ExcelJS.Cell, name: string, value: unknown) {
+    if (cell.value) {
+      if (typeof cell.value === 'string') {
+        if (cell.value.includes(name)) {
+          cell.value = cell.value === name ? value as ExcelJS.CellValue : cell.value.split(name).join(String(value))
+        }
+      } else if (typeof cell.value === 'object') {
+        const richTextCell = cell.value as ExcelJS.CellRichTextValue
+        if (richTextCell.richText && isArray(richTextCell.richText)) {
+          for (const richText of richTextCell.richText) {
+            if (richText.text.includes(name)) {
+              richText.text = richText.text === name ? String(value) : richText.text.split(name).join(String(value))
+            }
           }
         }
       }
     }
   }
-
-  private setCell(cell: XLSX.CellObject, name: string, value: any) {
-    if (cell.v && typeof cell.v === 'string' && cell.v.indexOf(name) >= 0) {
-      cell.v = cell.v === name ? value : cell.v.split(name).join(value)
-      if (typeof cell.v === 'number') {
-        cell.t = 'n'
-      } else if (Object.prototype.toString.call(cell.v) === '[object Date]') {
-        cell.t = 'd'
-      } else if (cell.v === true || cell.v === false) {
-        cell.t = 'b'
-      }
-    }
-  }
-
-  private parseCellName(cellName: string) {
-    for (let i = 0; i < cellName.length; i++) {
-      if (!isNaN(+cellName[i])) {
-        return {
-          column: cellName.substring(0, i),
-          rowIndex: +cellName.substring(i)
-        }
-      }
-    }
-    return {
-      column: '',
-      rowIndex: -1
-    }
-  }
-
-  private findRowIndex(name: string, sheet: XLSX.WorkSheet) {
-    for (const cellName in sheet) {
-      if (sheet.hasOwnProperty(cellName) && cellName.indexOf('!') !== 0) {
-        const cell: XLSX.CellObject = sheet[cellName]
-        if (cell.w && cell.w.indexOf(`{${name}.`) >= 0) {
-          const { rowIndex } = this.parseCellName(cellName)
-          return rowIndex
-        }
-      }
-    }
-    return -1
-  }
 }
+
+const isArray = (arg: unknown): arg is unknown[] => Array.isArray(arg)

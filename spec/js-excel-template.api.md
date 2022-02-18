@@ -4,22 +4,22 @@
 
 ```ts
 
-import * as XLSX from 'xlsx';
+/// <reference types="node" />
+
+import * as ExcelJS from 'exceljs';
 
 // Warning: (ae-forgotten-export) The symbol "JsExcelTemplateBase" needs to be exported by the entry point nodejs.d.ts
 //
 // @public (undocumented)
 class JsExcelTemplate extends JsExcelTemplateBase {
     // (undocumented)
-    static fromFile(filepath: string): JsExcelTemplate;
+    static fromFile(filepath: string): Promise<JsExcelTemplate>;
     // (undocumented)
-    saveAs(filepath: string): void;
+    saveAs(filepath: string): Promise<void>;
     // (undocumented)
-    toBuffer(bookType: XLSX.BookType): any;
+    toBuffer(): Promise<Buffer>;
 }
-
 export default JsExcelTemplate;
-
 
 // (No @packageDocumentation comment for this package)
 

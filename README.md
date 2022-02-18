@@ -31,21 +31,23 @@ A js excel template used in browser or nodejs environment.
 ```ts
 // nodejs:
 import JsExcelTemplate from "js-excel-template";
-const excelTemplate = JsExcelTemplate.fromFile("demo/test.xlsx");
+const excelTemplate = await JsExcelTemplate.fromFile("demo/test.xlsx");
 
 // browser(module):
 // import * as FileSaver from "file-saver";
 // import JsExcelTemplate from "js-excel-template";
-// fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
-//     const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
+// const response = await fetch('./test.xlsx')
+// const arrayBuffer = await response.arrayBuffer()
+// const excelTemplate = await JsExcelTemplate.fromArrayBuffer(arrayBuffer)
 
 // browser(script tag):
 // <script src="file-saver/FileSaver.min.js"></script>
-// <script src="xlsx/dist/xlsx.full.min.js"></script>
+// <script src="exceljs/dist/exceljs.min.js"></script>
 // <script src="js-excel-template/browser/js-excel-template.min.js"></script>
 // <script>
-//     fetch("./test.xlsx").then(response => response.arrayBuffer()).then(arrayBuffer => {
-//         const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
+//   const response = await fetch('./test.xlsx')
+//   const arrayBuffer = await response.arrayBuffer()
+//   const excelTemplate = await JsExcelTemplate.fromArrayBuffer(arrayBuffer)
 
 excelTemplate.set("name", "John");
 excelTemplate.set("age", 123);
@@ -54,40 +56,58 @@ excelTemplate.set("isBoy", true);
 excelTemplate.set("isGirl", false);
 
 const students = [
-    { name: "Tommy", age: 12 },
-    { name: "Philips", age: 13 },
-    { name: "Sara", age: 14 },
+  { name: "Tommy", age: 12 },
+  { name: "Philips", age: 13 },
+  { name: "Sara", age: 14 },
 ];
 
 for (let i = 1; i <= 5; i++) {
-    if (i <= students.length) {
-        excelTemplate.set(`name${i}`, students[i - 1].name);
-        excelTemplate.set(`age${i}`, students[i - 1].age);
-    } else {
-        excelTemplate.set(`name${i}`, "");
-        excelTemplate.set(`age${i}`, "");
-    }
+  if (i <= students.length) {
+    excelTemplate.set(`name${i}`, students[i - 1].name);
+    excelTemplate.set(`age${i}`, students[i - 1].age);
+  } else {
+    excelTemplate.set(`name${i}`, "");
+    excelTemplate.set(`age${i}`, "");
+  }
 }
 excelTemplate.set("average", students.reduce((p, c) => p + c.age, 0) / students.length);
+
+excelTemplate.set('fields', [{ name: 'Name' }, { name: 'Age' }], { duplicateCellIfArray: true })
 
 excelTemplate.set("students", students);
 
 // nodejs:
-excelTemplate.saveAs("spec/out.xlsx");
+await excelTemplate.saveAs("spec/out.xlsx");
 
 // browser(module):
-//     FileSaver.saveAs(excelTemplate.toBlob(), "test.xlsx");
-// });
+// const blob = await excelTemplate.toBlob()
+// FileSaver.saveAs(blob, "test.xlsx");
 
 // browser(script tag):
-//         saveAs(excelTemplate.toBlob(), "test.xlsx");
-//     });
+//   const blob = await excelTemplate.toBlob()
+//   FileSaver.saveAs(blob, "test.xlsx");
 // </script>
 ```
 
 ![out](https://raw.githubusercontent.com/plantain-00/js-excel-template/master/doc/out.PNG)
 
 ## change logs
+
+```ts
+// v3
+const excelTemplate = await JsExcelTemplate.fromFile("demo/test.xlsx");
+const excelTemplate = await JsExcelTemplate.fromArrayBuffer(arrayBuffer);
+<script src="exceljs/dist/exceljs.min.js"></script>
+await excelTemplate.saveAs("spec/out.xlsx");
+const blob = await excelTemplate.toBlob()
+
+// v2
+const excelTemplate = JsExcelTemplate.fromFile("demo/test.xlsx");
+const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer);
+<script src="xlsx/dist/xlsx.full.min.js"></script>
+excelTemplate.saveAs("spec/out.xlsx");
+const blob = excelTemplate.toBlob()
+```
 
 ```ts
 // v2

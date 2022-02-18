@@ -1,8 +1,10 @@
 import * as FileSaver from 'file-saver'
 import JsExcelTemplate from '../dist/browser/browser'
 
-fetch('./test.xlsx').then(response => response.arrayBuffer()).then(arrayBuffer => {
-  const excelTemplate = JsExcelTemplate.fromArrayBuffer(arrayBuffer)
+(async () => {
+  const response = await fetch('./test.xlsx')
+  const arrayBuffer = await response.arrayBuffer()
+  const excelTemplate = await JsExcelTemplate.fromArrayBuffer(arrayBuffer)
 
   excelTemplate.set('name', 'John')
   excelTemplate.set('age', 123)
@@ -11,9 +13,9 @@ fetch('./test.xlsx').then(response => response.arrayBuffer()).then(arrayBuffer =
   excelTemplate.set('isGirl', false)
 
   const students = [
-        { name: 'Tommy', age: 12 },
-        { name: 'Philips', age: 13 },
-        { name: 'Sara', age: 14 }
+    { name: 'Tommy', age: 12 },
+    { name: 'Philips', age: 13 },
+    { name: 'Sara', age: 14 }
   ]
 
   for (let i = 1; i <= 5; i++) {
@@ -27,7 +29,10 @@ fetch('./test.xlsx').then(response => response.arrayBuffer()).then(arrayBuffer =
   }
   excelTemplate.set('average', students.reduce((p, c) => p + c.age, 0) / students.length)
 
+  excelTemplate.set('fields', [{ name: 'Name' }, { name: 'Age' }], { duplicateCellIfArray: true })
+
   excelTemplate.set('students', students)
 
-  FileSaver.saveAs(excelTemplate.toBlob(), 'test.xlsx')
-})
+  const blob = await excelTemplate.toBlob()
+  FileSaver.saveAs(blob, 'test.xlsx')
+})()

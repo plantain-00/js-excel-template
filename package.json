@@ -23,7 +23,7 @@
     "url": "https://github.com/plantain-00/js-excel-template/issues"
   },
   "typeCoverage": {
-    "atLeast": 96
+    "atLeast": 98.07
   },
   "homepage": "https://github.com/plantain-00/js-excel-template#readme",
   "devDependencies": {
@@ -55,7 +55,7 @@
     "webpack-cli": "4.9.2"
   },
   "dependencies": {
-    "xlsx": "0.18"
+    "exceljs": "4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

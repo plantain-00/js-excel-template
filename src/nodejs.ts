@@ -1,25 +1,21 @@
-import * as XLSX from 'xlsx'
-
 import JsExcelTemplateBase from './common'
 
 /**
  * @public
  */
 export default class JsExcelTemplate extends JsExcelTemplateBase {
-  public static fromFile(filepath: string) {
-    const workbook = XLSX.readFile(filepath, {
-      cellNF: true,
-      cellStyles: true,
-      cellDates: true
-    })
-    return new JsExcelTemplate(workbook)
+  public static async fromFile(filepath: string) {
+    const template = new JsExcelTemplate()
+    await template.workbook.xlsx.readFile(filepath)
+    return template
   }
 
-  public toBuffer(bookType: XLSX.BookType) {
-    return XLSX.write(this.workbook, { bookType, type: 'buffer' })
+  public async toBuffer() {
+    const arrayBuffer = await this.toArrayBuffer()
+    return Buffer.from(arrayBuffer)
   }
 
   public saveAs(filepath: string) {
-    XLSX.writeFile(this.workbook, filepath)
+    return this.workbook.xlsx.writeFile(filepath)
   }
 }
