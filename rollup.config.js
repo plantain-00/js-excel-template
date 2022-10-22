@@ -1,7 +1,7 @@
-import { uglify } from 'rollup-plugin-uglify'
-import resolve from '@rollup/plugin-node-resolve'
+const { uglify } = require('rollup-plugin-uglify')
+const resolve = require('@rollup/plugin-node-resolve')
 
-export default {
+module.exports = {
   input: 'dist/browser/browser.js',
   plugins: [resolve({ browser: true }), uglify()],
   output: {
