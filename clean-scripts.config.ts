@@ -11,7 +11,7 @@ export default {
       front: [
         `tsc -p src/tsconfig.browser.json`,
         {
-          rollup: `rollup --config rollup.config.js`,
+          rollup: `rollup --config rollup.config.mjs`,
           demo: `webpack --config demo/webpack.config.ts`
         }
       ]
