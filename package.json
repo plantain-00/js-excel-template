@@ -2,8 +2,8 @@
   "name": "js-excel-template",
   "version": "3.0.1",
   "description": "A js excel template used in browser or nodejs environment.",
-  "main": "nodejs/nodejs/index.js",
-  "module": "browser/browser/index.js",
+  "main": "nodejs/nodejs.js",
+  "module": "browser/browser.js",
   "unpkg": "js-excel-template.min.js",
   "jsdelivr": "js-excel-template.min.js",
   "scripts": {
