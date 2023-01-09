@@ -43,7 +43,7 @@ const excelTemplate = await JsExcelTemplate.fromFile("demo/test.xlsx");
 // browser(script tag):
 // <script src="file-saver/FileSaver.min.js"></script>
 // <script src="exceljs/dist/exceljs.min.js"></script>
-// <script src="js-excel-template/browser/js-excel-template.min.js"></script>
+// <script src="js-excel-template/js-excel-template.min.js"></script>
 // <script>
 //   const response = await fetch('./test.xlsx')
 //   const arrayBuffer = await response.arrayBuffer()
